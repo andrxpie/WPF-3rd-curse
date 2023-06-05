@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_repeat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" Background="#FF5346A1" Foreground="White" FontFamily="Cascadia code">
+    <UniformGrid Columns="3" Rows="3">
+        <Button x:Name="button1" Background="MediumSlateBlue" Margin="10">
+            <TextBlock Foreground="White" TextWrapping="Wrap">Wraping an text block element in button</TextBlock>
+        </Button>
+    </UniformGrid>
 </Window>

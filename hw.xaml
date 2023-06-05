@@ -25,7 +25,7 @@
 
             <Button Content="SS" Background="Blue" BorderBrush="Transparent" Foreground="White" Height="35" Width="35"/>
             <DockPanel Grid.Column="1">
-                <TextBlock DockPanel.Dock="Left"
+                <TextBlock DockPanel.Dock="Left" DockPanel.Dock="Top"/>
             </DockPanel>
         </Grid>
     </DockPanel>

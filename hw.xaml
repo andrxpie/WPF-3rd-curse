@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPF_repeat.hw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_repeat"
+        mc:Ignorable="d"
+        Title="hw" Height="450" Width="800" FontFamily="Cascadia code">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Background="Black" LastChildFill="false">
+            <Button DockPanel.Dock="Left" Foreground="White" Background="Blue" BorderBrush="Transparent" Height="30" Width="30" Content="⇶" VerticalAlignment="Center"/>
+            <Button DockPanel.Dock="Left" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="90" Content="Office 365"/>
+            <Button DockPanel.Dock="Left" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="90" Content="SharePoint"/>
+            <Button DockPanel.Dock="Right" Background="White" BorderBrush="Transparent" Height="30" Width="30"/>
+            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="30" Content="?"/>
+            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="30" Content="◯"/>
+            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="30" Content="♪"/>
+        </DockPanel>
+
+        <Grid DockPanel.Dock="Top" Margin="20 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="SS" Background="Blue" BorderBrush="Transparent" Foreground="White" Height="35" Width="35"/>
+            <DockPanel Grid.Column="1">
+                <TextBlock DockPanel.Dock="Left"
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>

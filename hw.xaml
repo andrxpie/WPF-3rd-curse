@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_repeat"
         mc:Ignorable="d"
-        Title="hw" Height="450" Width="800" FontFamily="Cascadia code">
+        Title="hw" Height="834" Width="800" FontFamily="Cascadia code">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
     </Window.Resources>
     
-    <DockPanel LastChildFill="true">
+    <DockPanel>
         <DockPanel DockPanel.Dock="Top" Background="Black" LastChildFill="false">
             <Button DockPanel.Dock="Left" Foreground="White" Background="Blue" Height="30" Width="30" Content="⇶" VerticalAlignment="Center"/>
             <Button DockPanel.Dock="Left" Foreground="White" Background="Black" Height="30" Width="90" Content="Office 365"/>
@@ -50,6 +50,18 @@
             <TextBlock Text="Published" Foreground="Gray" VerticalAlignment="Center" FontSize="10" HorizontalAlignment="Center" Margin="0 0 5 0" DockPanel.Dock="Right"/>
         </DockPanel>
 
+        <UniformGrid DockPanel.Dock="Bottom" Columns="4" Rows="2" Margin="15">
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+        </UniformGrid>
+        <TextBlock DockPanel.Dock="Bottom" Text="Image gallery" Foreground="Gray" FontSize="15" Margin="20 20 0 0"/>
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"/>
@@ -82,6 +94,6 @@
                 <TextBlock FontSize="15" Text="LightPurple/LightSkin" TextAlignment="Center" HorizontalAlignment="Left" Padding="2"/>
                 <TextBlock FontSize="10" TextWrapping="Wrap" TextAlignment="Left" HorizontalAlignment="Left" Padding="2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
             </StackPanel>
-        </Grid>
+        </Grid>        
     </DockPanel>
 </Window>

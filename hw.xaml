@@ -63,10 +63,25 @@
             </Grid.RowDefinitions>
 
             <Image Source="https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/11/css-gradient.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-            
-            
+            <StackPanel Grid.Column="2" Margin="20">
+                <TextBlock Background="Blue" Foreground="White" FontSize="10" Text="New" Width="30" TextAlignment="Center" HorizontalAlignment="Left" Padding="2" Margin="0 0 0 5"/>
+                <TextBlock FontSize="15" Text="Red/Orange" TextAlignment="Center" HorizontalAlignment="Left" Padding="2"/>
+                <TextBlock FontSize="10" TextWrapping="Wrap" TextAlignment="Left" HorizontalAlignment="Left" Padding="2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+            </StackPanel>
+
             <Image Source="https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3764.jpg?w=360" Stretch="Fill" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <StackPanel Grid.Row="1" Margin="20">
+                <TextBlock Background="Blue" Foreground="White" FontSize="10" Text="Older" Width="40" TextAlignment="Center" HorizontalAlignment="Left" Padding="2" Margin="0 0 0 5"/>
+                <TextBlock FontSize="15" Text="Purple/LightBlue" TextAlignment="Center" HorizontalAlignment="Left" Padding="2"/>
+                <TextBlock FontSize="10" TextWrapping="Wrap" TextAlignment="Left" HorizontalAlignment="Left" Padding="2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+            </StackPanel>
+            
             <Image Source="https://img.freepik.com/free-vector/pastel-ombre-background-pink-purple_53876-120750.jpg?w=2000" Stretch="Fill" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <StackPanel Grid.Row="2" Grid.Column="2" Margin="20">
+                <TextBlock Background="Blue" Foreground="White" FontSize="10" Text="Oldest" Width="42" TextAlignment="Center" HorizontalAlignment="Left" Padding="2" Margin="0 0 0 5"/>
+                <TextBlock FontSize="15" Text="LightPurple/LightSkin" TextAlignment="Center" HorizontalAlignment="Left" Padding="2"/>
+                <TextBlock FontSize="10" TextWrapping="Wrap" TextAlignment="Left" HorizontalAlignment="Left" Padding="2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>

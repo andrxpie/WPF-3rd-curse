@@ -6,15 +6,21 @@
         xmlns:local="clr-namespace:WPF_repeat"
         mc:Ignorable="d"
         Title="hw" Height="450" Width="800" FontFamily="Cascadia code">
-    <DockPanel>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+    </Window.Resources>
+    
+    <DockPanel LastChildFill="true">
         <DockPanel DockPanel.Dock="Top" Background="Black" LastChildFill="false">
-            <Button DockPanel.Dock="Left" Foreground="White" Background="Blue" BorderBrush="Transparent" Height="30" Width="30" Content="⇶" VerticalAlignment="Center"/>
-            <Button DockPanel.Dock="Left" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="90" Content="Office 365"/>
-            <Button DockPanel.Dock="Left" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="90" Content="SharePoint"/>
-            <Button DockPanel.Dock="Right" Background="White" BorderBrush="Transparent" Height="30" Width="30"/>
-            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="30" Content="?"/>
-            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="30" Content="◯"/>
-            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" BorderBrush="Transparent" Height="30" Width="30" Content="♪"/>
+            <Button DockPanel.Dock="Left" Foreground="White" Background="Blue" Height="30" Width="30" Content="⇶" VerticalAlignment="Center"/>
+            <Button DockPanel.Dock="Left" Foreground="White" Background="Black" Height="30" Width="90" Content="Office 365"/>
+            <Button DockPanel.Dock="Left" Foreground="White" Background="Black" Height="30" Width="90" Content="SharePoint"/>
+            <Border DockPanel.Dock="Right" CornerRadius="15" Background="White" Height="25" Width="25" Margin="0 0 3 0"/>
+            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" Height="30" Width="30" Content="?"/>
+            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" Height="30" Width="30" Content="◯"/>
+            <Button DockPanel.Dock="Right" Foreground="White" Background="Black" Height="30" Width="30" Content="♪"/>
         </DockPanel>
 
         <Grid DockPanel.Dock="Top" Margin="20 10">
@@ -22,11 +28,45 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <Button Content="SS" Background="Blue" BorderBrush="Transparent" Foreground="White" Height="35" Width="35"/>
-            <DockPanel Grid.Column="1">
-                <TextBlock DockPanel.Dock="Left" DockPanel.Dock="Top"/>
-            </DockPanel>
+            <Button Grid.RowSpan="2" Content="SS" Background="Blue" BorderBrush="Transparent" Foreground="White" Height="35" Width="35"/>
+            <TextBlock Grid.Column="1" Text="Sitio de exhibicion" FontSize="15" Margin="0"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Home  Documents Papers  See comers" FontSize="10" Margin="0" Foreground="Gray" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Edit" VerticalAlignment="Center" Foreground="Blue" Margin="210 0" FontSize="10"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="↪" Foreground="Blue" HorizontalAlignment="Right" Margin="75 0" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Share site" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="searchTBX" Grid.Row="1" Grid.Column="1" Text="Search" Foreground="Gray" HorizontalAlignment="Right" Width="150" FontSize="10" VerticalContentAlignment="Center"/>
+        </Grid>
+
+        <DockPanel DockPanel.Dock="Top" Background="LightGray" LastChildFill="False">
+            <TextBlock DockPanel.Dock="Left" Text="+ New ▼" Foreground="Gray" FontSize="10" Margin="40 5"/>
+            <Border DockPanel.Dock="Right" Background="Blue" Width="60">
+                <TextBlock Text="Edit" Foreground="White" VerticalAlignment="Center" FontSize="10" HorizontalAlignment="Center"/>
+            </Border>
+            <TextBlock Text="Published" Foreground="Gray" VerticalAlignment="Center" FontSize="10" HorizontalAlignment="Center" Margin="0 0 5 0" DockPanel.Dock="Right"/>
+        </DockPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/11/css-gradient.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+            
+            
+            <Image Source="https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3764.jpg?w=360" Stretch="Fill" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <Image Source="https://img.freepik.com/free-vector/pastel-ombre-background-pink-purple_53876-120750.jpg?w=2000" Stretch="Fill" Grid.Row="2" Grid.ColumnSpan="2"/>
         </Grid>
     </DockPanel>
 </Window>

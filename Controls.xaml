@@ -51,7 +51,7 @@
                 <Calendar x:Name="calendar" DisplayMode="Month" SelectionMode="MultipleRange"/>
             </StackPanel>
             
-            <GroupBox x:Name="numType" Grid.Column="1" Header="Num type" BorderThickness="1" Margin="5 0" MinHeight="63" MaxHeight="63">
+            <GroupBox x:Name="numTypeGB" Grid.Column="1" Header="Num type" BorderThickness="1" Margin="5 0" MinHeight="63" MaxHeight="63">
                 <StackPanel>
                     <RadioButton GroupName="numType" Foreground="White">Econom</RadioButton>
                     <RadioButton GroupName="numType" Foreground="White" Margin="0 0 5 0">Standart</RadioButton>
@@ -68,7 +68,7 @@
         </UniformGrid>
 
         <DockPanel DockPanel.Dock="Bottom">
-            <CheckBox x:Name="termsCBX" DockPanel.Dock="Top" Foreground="White" Content="I`ve accepted terms of services" IsChecked="False" HorizontalAlignment="Center"/>
+            <CheckBox x:Name="termsCBX" DockPanel.Dock="Top" Foreground="White" Content="I`ve accepted terms of services" IsChecked="False" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
             <UniformGrid Columns="2">
                 <Button x:Name="discardBTN" Background="MediumSlateBlue" Foreground="White" Content="Discard" IsCancel="True" FontSize="20" Margin="5"/>
                 <Button x:Name="acceptBTN" IsEnabled="False" Background="MediumSlateBlue" Foreground="Black" Content="Accept" IsDefault="True" FontSize="20" Margin="5"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,30 @@ namespace WPF_repeat
     /// </summary>
     public partial class Binding : Window
     {
+        private ViewModel viewModel = new();
+
         public Binding()
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+    }
+
+    [AddINotifyPropertyChangedInterface]
+    public class ViewModel
+    {
+        public ViewModel()
         {
-
+            
         }
+
+        public Color Color => Color.FromArgb(alpha, red, green, blue);
+
+        // ARGB
+        public byte alpha { get; set; }
+        public byte red { get; set; }
+        public byte green { get; set; }
+        public byte blue { get; set; }
     }
 }

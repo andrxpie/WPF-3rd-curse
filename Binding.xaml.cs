@@ -27,7 +27,6 @@ namespace WPF_repeat
             InitializeComponent();
             this.DataContext = viewModel;
         }
-
     }
 
     [AddINotifyPropertyChangedInterface]

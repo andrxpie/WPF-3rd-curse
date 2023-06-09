@@ -45,12 +45,8 @@ namespace WPF_repeat
                 for (int i = 0; i < costumerCountLBL.ToString().Length; i++)
                 {
 
+                }
             }
-        }
-
-        private void RepeatButton_Click(object sender, RoutedEventArgs e)
-        {
-            //countCostumers = ++costumerCountLBL
         }
     }
 }

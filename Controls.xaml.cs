@@ -24,16 +24,26 @@ namespace WPF_repeat
             InitializeComponent();
         }
 
-        public class Order
-        {
-            public string name { get; set; }
-            public string ?concatcInfo { get; set; }
-            public int countDays { get; set; }
-            public int numType { get; set; }
-            public int countCostumers { get; set; }
+        public string name { get; set; }
+        public string ?concatcInfo { get; set; }
+        public int countDays { get; set; }
+        public int numType { get; set; }
+        public int countCostumers { get; set; }
 
-            public Order()
+        private void RepeatButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(countCostumers == 12)
             {
+                MessageBox.Show("Max num of costumers has been reached", "Message", MessageBoxButton.OK);
+                return;
+            }
+
+            countCostumers = Convert.ToInt32(costumerCountLBL.Content.ToString().Substring(ToString().Length - 1)) + 1;
+
+            if(countCostumers < 10)
+            {
+                for (int i = 0; i < costumerCountLBL.ToString().Length; i++)
+                {
 
             }
         }

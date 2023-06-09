@@ -40,7 +40,7 @@ namespace WPF_repeat
 
         private void RepeatButton_Click(object sender, RoutedEventArgs e)
         {
-            countCostumers = ++costumerCountLBL
+            //countCostumers = ++costumerCountLBL
         }
     }
 }

@@ -51,7 +51,7 @@
         </DockPanel>
 
         <UniformGrid DockPanel.Dock="Bottom" Columns="4" Rows="2" Margin="15">
-            <Border Background="Gray" Width="200" Height="50" Margin="3"/>
+            <Image Source="gradients/gradient1.png" Stretch="Fill"/>
             <Border Background="Gray" Width="200" Height="50" Margin="3"/>
             <Border Background="Gray" Width="200" Height="50" Margin="3"/>
             <Border Background="Gray" Width="200" Height="50" Margin="3"/>

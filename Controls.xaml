@@ -68,10 +68,14 @@
         </UniformGrid>
 
         <DockPanel DockPanel.Dock="Bottom">
-            <CheckBox x:Name="termsCBX" DockPanel.Dock="Top" Foreground="White" Content="I`ve accepted terms of services" IsChecked="False" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+            <CheckBox x:Name="termsCBX" DockPanel.Dock="Top" Foreground="White" Content="I`ve accepted terms of services" IsChecked="{Binding Path=IsEnabled}" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
             <UniformGrid Columns="2">
                 <Button x:Name="discardBTN" Background="MediumSlateBlue" Foreground="White" Content="Discard" IsCancel="True" FontSize="20" Margin="5"/>
-                <Button x:Name="acceptBTN" IsEnabled="False" Background="MediumSlateBlue" Foreground="Black" Content="Accept" IsDefault="True" FontSize="20" Margin="5"/>
+                <Button x:Name="acceptBTN" IsEnabled="{Binding ElementName=termsCBX, Path=IsChecked}" Background="MediumSlateBlue" Content="Accept" IsDefault="True" FontSize="20" Margin="5">
+                    <Button.Foreground>
+                        <SolidColorBrush Color="{Binding Path=ForeColor}"/>
+                    </Button.Foreground>
+                </Button>
             </UniformGrid>
         </DockPanel>
     </DockPanel>

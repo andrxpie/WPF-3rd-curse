@@ -19,9 +19,11 @@ namespace WPF_repeat
     /// </summary>
     public partial class Controls : Window
     {
+        private ViewModel viewModel = new();
         public Controls()
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
 
         public string name { get; set; }
@@ -34,19 +36,17 @@ namespace WPF_repeat
         {
             if(countCostumers == 12)
             {
-                MessageBox.Show("Max num of costumers has been reached", "Message", MessageBoxButton.OK);
+                countCostumers = 0;
                 return;
             }
 
-            countCostumers = Convert.ToInt32(costumerCountLBL.Content.ToString().Substring(ToString().Length - 1)) + 1;
-
-            if(countCostumers < 10)
-            {
-                for (int i = 0; i < costumerCountLBL.ToString().Length; i++)
-                {
-
-                }
-            }
+            countCostumers++;
         }
+    }
+
+    public class ViewModel
+    {
+        public bool IsEnabled { get; set; }
+        public Color ForeColor => IsEnabled ? Colors.Wheat : Colors.Black;
     }
 }

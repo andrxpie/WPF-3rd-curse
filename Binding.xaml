@@ -34,7 +34,7 @@
                 <Slider x:Name="blueSLIDER" Value="{Binding Path=blue}" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Margin="5"/>
             </StackPanel>
 
-            <Border Grid.Column="3">
+            <Border x:Name="colorBRD" Grid.Column="3">
                 <Border.Background>
                     <SolidColorBrush Color="{Binding Color, FallbackValue=Black}"></SolidColorBrush>
                 </Border.Background>
@@ -42,17 +42,17 @@
         </Grid>
 
         <DockPanel DockPanel.Dock="Top" LastChildFill="False">
-            <Button DockPanel.Dock="Left" Content="Add" Width="100" Margin="5"/>
-            <Button DockPanel.Dock="Left" Content="Delete" Width="100" Margin="5"/>
+            <Button DockPanel.Dock="Left" Content="Add" Width="100" Margin="5" Click="AddColor"/>
+            <Button DockPanel.Dock="Left" Content="Delete" Width="100" Margin="5" Click="DeleteColor"/>
         </DockPanel>
 
-        <Grid DockPanel.Dock="Bottom" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <ListView/>
-        </Grid>
+        <ListView x:Name="colorLST" DockPanel.Dock="Bottom">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" Header="Hex" DisplayMemberBinding="{Binding Path=Hex}"/>
+                    <GridViewColumn Width="Auto" Header="Color" DisplayMemberBinding="{Binding Path=ListColor}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </DockPanel>
 </Window>

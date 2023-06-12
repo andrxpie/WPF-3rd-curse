@@ -5,7 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_repeat"
         mc:Ignorable="d"
-        Title="Binding" Height="359" Width="655" FontFamily="Cascadia code" FontSize="15">
+        Title="Binding" Height="359" Width="655" Background="#FF5346A1" Foreground="White" FontFamily="Cascadia code" FontSize="15">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="MediumSlateBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="MediumSlateBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+
     <DockPanel>
         <Grid DockPanel.Dock="Top" Margin="10">
             <Grid.ColumnDefinitions>
@@ -34,7 +50,7 @@
                 <Slider x:Name="blueSLIDER" Value="{Binding Path=blue}" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Margin="5"/>
             </StackPanel>
 
-            <Border x:Name="colorBRD" Grid.Column="3">
+            <Border x:Name="colorBRD" Grid.Column="3" BorderBrush="MediumSlateBlue" BorderThickness="1">
                 <Border.Background>
                     <SolidColorBrush Color="{Binding Color, FallbackValue=Black}"></SolidColorBrush>
                 </Border.Background>
@@ -47,12 +63,12 @@
         </DockPanel>
 
         <ListView x:Name="colorLST" DockPanel.Dock="Bottom">
-            <ListView.View>
+            <!--<ListView.View>
                 <GridView>
-                    <GridViewColumn Width="100" Header="Hex" DisplayMemberBinding="{Binding Path=Hex}"/>
+                    <GridViewColumn Width="100" Header="Hex" DisplayMemberBinding="{Binding Path=Color}"/>
                     <GridViewColumn Width="Auto" Header="Color" DisplayMemberBinding="{Binding Path=ListColor}"/>
                 </GridView>
-            </ListView.View>
+            </ListView.View>-->
         </ListView>
     </DockPanel>
 </Window>

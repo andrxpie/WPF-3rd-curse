@@ -33,7 +33,9 @@ namespace WPF_repeat
 
         private void AddColor(object sender, RoutedEventArgs e)
         {
-            viewModel.ColorList.Add(new ColorHex(viewModel.Color));
+            if(!viewModel.ColorList.Contains(viewModel.ToString()))
+                viewModel.ColorList.Add(viewModel.ToString());
+            else MessageBox.Show("Color already exist");
         }
 
         private void DeleteColor(object sender, RoutedEventArgs e)
@@ -46,33 +48,19 @@ namespace WPF_repeat
     [AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
-        public ViewModel()
-        {
-            ColorList = new();
-        }
+        public ViewModel() {}
 
         public Color Color => Color.FromArgb(alpha, red, green, blue);
+        public ObservableCollection<string> ColorList { get; set; } = new();
 
-        // ARGB
         public byte alpha { get; set; }
         public byte red { get; set; }
         public byte green { get; set; }
         public byte blue { get; set; }
 
-        public ObservableCollection<ColorHex> ColorList { get; set; }
-
-        public class ColorHex
+        public override string ToString()
         {
-            public ColorHex(Color color)
-            {
-                Hex = color.ToString();
-                SolidColorBrush brush = new SolidColorBrush(color);
-                ListColor = new();
-                ListColor.Background = brush;
-            }
-
-            public string Hex { get; set; }
-            public Border ListColor { get; set; }
+            return Color.ToString();
         }
     }
 }

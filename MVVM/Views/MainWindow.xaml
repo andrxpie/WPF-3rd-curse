@@ -13,7 +13,20 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            
+            <TextBlock HorizontalAlignment="Center" Margin="15" FontSize="20">Details</TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="15 30 15 10" FontSize="15">Novel by</TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="15 10" FontSize="15">Published: </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="15 10" FontSize="15">Description: </TextBlock>
+            <WrapPanel></WrapPanel>
+            <Button
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center" Margin="15" FontSize="20">Library</TextBlock>
+            <Border Height="254" Background="#FF5346A1" BorderBrush="MediumSlateBlue" BorderThickness="5" Margin="15">
+                <ListView ItemsSource="{Binding books}" Foreground="White">
+                    
+                </ListView>
+            </Border>
         </StackPanel>
     </Grid>
 </Window>

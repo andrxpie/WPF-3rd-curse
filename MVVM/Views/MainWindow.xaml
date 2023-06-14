@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM"
+        d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF5346A1" Foreground="White" FontFamily="Cascadia code">
     <Grid>
@@ -17,13 +18,13 @@
             <TextBlock HorizontalAlignment="Left" Margin="15 30 15 10" FontSize="15">Novel by</TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="15 10" FontSize="15">Published: </TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="15 10" FontSize="15">Description: </TextBlock>
-            <WrapPanel></WrapPanel>
-            <Button
+            <TextBlock HorizontalAlignment="Left" Margin="15 5" FontSize="10" Text="{Binding books}"/>
+            <Button />
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock HorizontalAlignment="Center" Margin="15" FontSize="20">Library</TextBlock>
-            <Border Height="254" Background="#FF5346A1" BorderBrush="MediumSlateBlue" BorderThickness="5" Margin="15">
-                <ListView ItemsSource="{Binding books}" Foreground="White">
+            <Border Background="#FF5346A1" BorderBrush="MediumSlateBlue" BorderThickness="5" Margin="15">
+                <ListView Foreground="White">
                     
                 </ListView>
             </Border>

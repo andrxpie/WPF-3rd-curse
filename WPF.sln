@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controls", "Controls\Contro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding", "Binding\Binding.csproj", "{A654E1BB-F3F6-46D8-87E0-5545E94A5CDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Containers", "Start\Containers.csproj", "{EF01AFF0-CF5B-421D-A2B5-9CE86534632E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Containers", "Start\Containers.csproj", "{EF01AFF0-CF5B-421D-A2B5-9CE86534632E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Table Shulte", "Table Shulte\Table Shulte.csproj", "{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EF01AFF0-CF5B-421D-A2B5-9CE86534632E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF01AFF0-CF5B-421D-A2B5-9CE86534632E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF01AFF0-CF5B-421D-A2B5-9CE86534632E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

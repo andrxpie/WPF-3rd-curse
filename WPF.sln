@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding", "Binding\Binding.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Containers", "Start\Containers.csproj", "{EF01AFF0-CF5B-421D-A2B5-9CE86534632E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Table Shulte", "Table Shulte\Table Shulte.csproj", "{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shulte", "Table Shulte\Shulte.csproj", "{8CA1BB1D-FB82-4D8F-B667-11F249CBB1B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

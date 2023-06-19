@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\eye.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\eye.png" />
+  </ItemGroup>
+
 </Project>

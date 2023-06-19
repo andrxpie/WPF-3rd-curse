@@ -30,7 +30,7 @@ namespace Table_Shulte.ViewModels
             cells[0].IsEnable = true;
             //cells.Shuffle();
 
-            //cells.Insert(cells.Count / 2, new CellVM());
+            cells.Insert(cells.Count / 2, new CellVM());
         }
 
         public void NextCell(int number)
@@ -42,11 +42,12 @@ namespace Table_Shulte.ViewModels
                 if(cells[i].Number != null && cells[i].Number == CurrCell)
                 {
                     CurrCell++;
-                    cells[i + 1].IsEnable = true;
+                    if(cells[i].Number != LastNumber / 2)
+                        cells[i + 1].IsEnable = true;
+                    else
+                        cells[i + 2].IsEnable = true;
                     if(cells[i].Number == LastNumber)
-                    {
                         MessageBox.Show("Congrats");
-                    }
                     break;
                 }
             }

@@ -21,6 +21,45 @@
         <Setter Property="Background" Value="MediumSlateBlue"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Margin" Value="15"/>
+
+        <!--<Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    --><!--<Condition Binding="{Binding IsNext}" Value="True"/>--><!--
+                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#FFFFFF"
+                                            Storyboard.TargetProperty="Background.Color"
+                                            Duration="0:0:0.1"/>
+                            <ColorAnimation To="#000000"
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            Duration="0:0:0.1"/>
+                            <DoubleAnimation To="5"
+                                             Storyboard.TargetProperty="Width"
+                                             Duration="0:0:0.1"/>
+                            <DoubleAnimation To="5"
+                                             Storyboard.TargetProperty="Height"
+                                             Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiDataTrigger.EnterActions>
+                <MultiDataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="MediumSlateBlue"
+                                                    Storyboard.TargetProperty="Background.Color"
+                                                    Duration="0:0:0.1"/>
+                            <ColorAnimation To="#FFFFFF"
+                                                    Storyboard.TargetProperty="Foreground.Color"
+                                                    Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiDataTrigger.ExitActions>
+            </MultiDataTrigger>
+        </Style.Triggers>-->
     </Style>
     
     <Style x:Key="CellStyle" TargetType="{x:Type Button}">
@@ -69,7 +108,7 @@
                                                     Storyboard.TargetProperty="Background.Color"
                                                     Duration="0:0:0.1"/>
                             <ColorAnimation To="#FFFFFF"
-                                                    Storyboard.TargetProperty="Background.Color"
+                                                    Storyboard.TargetProperty="Foreground.Color"
                                                     Duration="0:0:0.1"/>
                             <ColorAnimation To="#5346a1"
                                                     Storyboard.TargetProperty="BorderBrush.Color"

@@ -20,10 +20,21 @@ namespace MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
+        ViewModel ViewModel;
         public MainWindow()
         {
-            InitializeComponent();
-            this.DataContext = new ViewModel();
+            ViewModel = new ViewModel();
+            DataContext = ViewModel;
+        }
+
+        private void Prev(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PrevBook();
+        }
+
+        private void Next(object sender, RoutedEventArgs e)
+        {
+            ViewModel.NextBook();
         }
     }
 }

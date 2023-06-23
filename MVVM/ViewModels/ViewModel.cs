@@ -7,34 +7,32 @@ using System.Threading.Tasks;
 
 namespace MVVM
 {
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
-        static string description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-        public bool IsAvaiablePrev { get; set; } = false;
-        public bool IsAvaiableNext { get; set; } = true;
-
-        public List<Book> books = new List<Book>()
-        { 
-            new Book() { Name = "Hicksaw Ridge", Author = "Steve Man", PubDate = new DateOnly(2023, 6, 14), Description = ViewModel.description },
-            new Book() { Name = "The Great Gatsby", Author = "F. Scott Fitzgerald", PubDate = new DateOnly(1925, 4, 10), Description = ViewModel.description },
-            new Book() { Name = "Lonely worker", Author = "Alfrefo Gamb", PubDate = new DateOnly(988, 2, 23), Description = ViewModel.description }
-        };
+        public bool IsAvaiablePrev => CurrentBookIndex > 0 ? true : false;
+        public bool IsAvaiableNext => CurrentBookIndex < Books.Count - 1 ? true : false;
+        public IList<Book> Books = new List<Book>();
         public Book CurrentBook { get; set; }
+        private int CurrentBookIndex { get; set; } = 0;
 
         public ViewModel() 
         {
-            CurrentBook = books.First();
+            Books.Add(new Book() { Name = "Hicksaw Ridge", Author = "Steve Man", PubDate = new DateOnly(2023, 6, 14), Description = "This is a description of \"Hicksaw Ridge\"" });
+            Books.Add(new Book() { Name = "The Great Gatsby", Author = "F. Scott Fitzgerald", PubDate = new DateOnly(1925, 4, 10), Description = "This is a description of \"The Great Gatsby\""});
+            Books.Add(new Book() { Name = "Lonely worker", Author = "Alfrefo Gamb", PubDate = new DateOnly(988, 2, 23), Description = "This is a description of \"Lonely worker\""});
+
+            CurrentBook = Books.First();
         }
 
         public void NextBook()
         {
-            
+            CurrentBook = Books[++CurrentBookIndex];
         }
 
         public void PrevBook()
         {
-
+            CurrentBook = Books[--CurrentBookIndex];
         }
     }
 }

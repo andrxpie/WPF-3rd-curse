@@ -7,20 +7,42 @@
         d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF5346A1" Foreground="White" FontFamily="Cascadia code">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="MediumSlateBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel>
-            <TextBlock HorizontalAlignment="Center" Margin="15" FontSize="20">Details</TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="15 30 15 10" FontSize="15">Novel by</TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="15 10" FontSize="15">Published: </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="15 10" FontSize="15">Description: </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="15 5" FontSize="10" Text="{Binding books}"/>
-            <Button />
-        </StackPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0 15 0 20" FontSize="20" Text="Details"/>
+
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                <Label DockPanel.Dock="Left" Content="Book by" Margin="10 10 3 10" FontSize="15" Foreground="White"/>
+                <Label DockPanel.Dock="Left" Content="{Binding CurrentBook.Author, FallbackValue=F. Scott Fitzerland}" Margin="0 10 3 10" FontSize="15" Foreground="White"/>
+            </DockPanel>
+
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                <Label DockPanel.Dock="Left" Content="Published: " Margin="10 10 3 10" FontSize="15" Foreground="White"/>
+                <Label DockPanel.Dock="Left" Content="{Binding CurrentBook.PubDate}" Margin="0 10 3 10" FontSize="15" Foreground="White"/>
+            </DockPanel>
+
+            <UniformGrid DockPanel.Dock="Bottom">
+                <Button Content="Previous" IsEnabled="{Binding IsAvaiablePrev, FallbackValue=false}"/>
+                <Button Content="Next" IsEnabled="{Binding IsAvaiableNext}"/>
+            </UniformGrid>
+            
+            <TextBlock HorizontalAlignment="Left" Margin="15 5" FontSize="10" Text="{Binding CurrentBook.Description}"/>
+        </DockPanel>
+        
         <StackPanel Grid.Column="1">
             <TextBlock HorizontalAlignment="Center" Margin="15" FontSize="20">Library</TextBlock>
             <Border Background="#FF5346A1" BorderBrush="MediumSlateBlue" BorderThickness="5" Margin="15">

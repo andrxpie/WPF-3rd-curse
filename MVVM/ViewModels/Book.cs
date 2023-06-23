@@ -12,5 +12,10 @@ namespace MVVM
         public string Author { get; set; }
         public DateOnly PubDate { get; set; }
         public string Description { get; set; }
+
+        public override string ToString()
+        {
+            return $"{PubDate.Month} {PubDate.Day}, {PubDate.Year}";
+        }
     }
 }

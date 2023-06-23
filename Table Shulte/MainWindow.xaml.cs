@@ -21,6 +21,7 @@ namespace Table_Shulte
     /// </summary>
     public partial class MainWindow : Window
     {
+        private TableVM vm; 
         public MainWindow()
         {
             InitializeComponent();
@@ -28,12 +29,13 @@ namespace Table_Shulte
 
         private void Restart(object sender, RoutedEventArgs e)
         {
-            TableVM vm = (TableVM)DataContext;
+            vm = (TableVM)DataContext;
 
             if(vm != null)
             {        
                 int diff = vm.Size;
-                DataContext = new TableVM(diff);
+                vm = new TableVM(diff);
+                DataContext = vm;
             }
             else MessageBox.Show("Game haven`t started");
         }
@@ -51,35 +53,30 @@ namespace Table_Shulte
 
                 if (RB.IsChecked == true)
                 {
-                    if((string)RB.Content == "Easy    (5 x 5)")
+                    int size = 0;
+                    switch ((string)RB.Content)
                     {
-                        DataContext = new TableVM(5);
-                        return;
+                        case "Easy    (5 x 5)":
+                            size = 5;
+                            break;
+                        case "Medium  (7 x 7)":
+                            size = 7;
+                            break;
+                        default:
+                            size = 9;
+                            break;
                     }
-                    else if((string)RB.Content == "Medium  (7 x 7)")
-                    {
-                        DataContext = new TableVM(7);
-                        return;
-                    }
-                    else
-                    {
-                        DataContext = new TableVM(9);
-                        return;
-                    }
+                    
+                    vm = new TableVM(size);
+                    DataContext = vm;
                 }
             }
         }
 
         private void ClickCell(object sender, RoutedEventArgs e)
         {
-            TableVM vm = (TableVM)DataContext;
-            Button btn = (Button)sender;
-
-            if((string)btn.Content == vm.CurrCell.ToString())
-            {
-                vm.CurrCell++;
-                btn.IsEnabled = true;
-            }
+            var btn = (Button)sender;
+            vm.NextCell(int.Parse(btn.Content.ToString()));
         }
     }
 }
